@@ -1,0 +1,69 @@
+body{
+  background-color: #9E715C;
+}
+
+/*
+===css encabezado y logo===
+*/
+#header{
+  background-color: #BC8554;
+  background-image:  url(fondo.jpg);
+  margin-top: 2%;
+  height: 150px;
+  padding-top: 20px;
+  color: #5A4644;
+}
+#header img {
+  float: left;
+  box-shadow: #808080;
+}
+/*
+===css barra navegacion===
+*/
+#nav{
+  background-color: #947E73;
+}
+/*
+===css menu lateral===
+*/
+#menulateral{
+  background-color: #FAE19E;
+  height: 25%;
+
+}
+
+/*
+===css area contenido===
+*/
+
+#contenido{
+   background-color:  #CDAC79;
+
+}
+/*
+===css que abarca menu lateral y contenido===
+*/
+#menucontenido{
+  background-color: #F1F1F1;
+  height: 100%;
+  box-shadow: #808080
+
+}
+
+/*
+===css pie de pagina===
+*/
+#footer{
+  background-color: #BC8554;
+  height: 30px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  /*subir wrapper*/
+  margin-bottom: 1%
+
+}
+/*remover espacio entre menu lateral y area contenido */
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}

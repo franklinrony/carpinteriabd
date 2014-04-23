@@ -1,0 +1,60 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.css")">
+		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+	<div class="container-fluid">
+		<!-- Encabezado -->
+		<div id="header" class="row-fluid">
+			<div class="span12">
+			<img src="@routes.Assets.at("images/logo.png")" alt="logo Muebleria Navarro">
+			<h1 class="text-center">Muebleria Navarro</h1>
+			<h2 class="text-center">"Construyendo tus sueños"</h2>
+			</div>
+		</div>
+		<!-- Barra navegacion -->
+		<div id="nav" class="row-fluid">
+			<p>navbar</p>
+		</div>
+		<!-- contenido y menu lateral -->
+		<div id="menucontenido" class="row-fluid">
+			<div id="menulateral" class="span2 ">
+				<p>menu lateral</p>
+				<ul>
+					<li>elemento1</li>
+					<li>elemento1</li>
+					<li>elemento1</li>
+					<li>elemento1</li>
+				</ul>
+			</div>
+			<div id="contenido" class="span10 ">@content <p>
+				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quibusdam, possimus, suscipit illo ipsam amet asperiores ipsum quo sint fugit voluptatum laudantium maiores consequuntur ab itaque quidem officiis consectetur commodi.</span>
+				<span>Laborum, tempore fugiat sequi placeat quisquam molestiae voluptas quo laboriosam quos exercitationem mollitia corporis quae. Officiis, aliquam, natus, quas molestiae perspiciatis incidunt quae fugit in sapiente voluptatibus totam iusto distinctio!</span>
+				<span>Expedita, veniam, cumque voluptates ex eveniet consequatur fuga in dolore necessitatibus vero nemo cum consequuntur ipsum debitis maiores dignissimos id corrupti odit ducimus qui adipisci deserunt libero nihil iusto amet.</span>
+				<span>Assumenda, nam, ipsam, repellat, incidunt odit itaque explicabo laudantium tempora perspiciatis commodi molestiae facere temporibus sint aspernatur recusandae numquam ad beatae dolorum voluptate natus veniam eius expedita aliquam voluptatem perferendis.</span>
+				<span>Suscipit, et eos quo adipisci temporibus quasi provident ipsa nostrum necessitatibus sapiente velit id libero corporis sit quidem cumque similique dicta incidunt nobis asperiores hic. Corporis nisi ut cumque quas!</span>
+				<span>Ex, labore, eos totam iusto laborum deserunt distinctio esse placeat repudiandae facere est illo praesentium commodi aspernatur error eius molestias. Repellat, provident quae reiciendis quo nemo rerum nulla obcaecati tempora!</span>
+				<span>Alias, minima, asperiores rerum inventore voluptatum reprehenderit ducimus nulla fuga voluptatem veniam perferendis fugiat nam consequatur autem consequuntur dolorem minus tempore quod officiis a illum quo aut voluptas eos blanditiis.</span>
+				<span>Explicabo, atque, laborum maxime asperiores possimus officia beatae nesciunt ad. Doloribus ex culpa repudiandae in libero ipsum. Ea, maxime, voluptatum praesentium reiciendis quia debitis quam minus labore cupiditate quas reprehenderit?</span>
+				<span>Amet, iusto, officiis ratione totam ad ex harum cumque similique laudantium laboriosam nihil cupiditate vitae officia repellat esse. Aut, inventore autem nisi quia quis minima animi at nihil repudiandae! Tenetur?</span>
+				<span>Quos, eaque, perspiciatis, non, eum quae deleniti repudiandae illum nemo et sequi hic soluta odit possimus labore expedita at ut reprehenderit quia earum facilis excepturi iure consectetur quidem sunt aperiam.</span>
+			</p></div>
+		</div>
+		<!--footer  -->
+		<div id="footer" class="row-fluid text-center">
+			<p>pie de pagina</p>
+		</div>
+	</div>
+ 
+    </body>
+</html>
