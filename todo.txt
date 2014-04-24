@@ -1,0 +1,1 @@
+-al aplicar nowrap en #header el texto del header se sale del div al reducir el tamaño del navegador.

@@ -10,26 +10,47 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 	<div class="container-fluid">
+	<!-- Top navbar -->
+	<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="">Muebleria Navarro</a>
+					
+					<ul class="nav">
+						<li class="divider-vertical"></li>
+						<li class="active"><a href="">Registro</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="">Ingresar</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="">Solicitar Cotizacion</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="">Contactenos</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="">Panel Admin</a></li>
+						<li class="divider-vertical"></li>
+					</ul>
+				</div>	
+			</div>
+		</div>
+		
 		<!-- Encabezado -->
 		<div id="header" class="row-fluid">
 			<div class="span12">
 			<img src="@routes.Assets.at("images/logo.png")" alt="logo Muebleria Navarro">
 			<h1 class="text-center">Muebleria Navarro</h1>
-			<h2 class="text-center">"Construyendo tus sueños"</h2>
+			<h2 class="text-center">"Construyendo tus sueños en Madera"</h2>
 			</div>
 		</div>
-		<!-- Barra navegacion -->
-		<div id="nav" class="row-fluid">
-			<p>navbar</p>
-		</div>
+
 		<!-- contenido y menu lateral -->
 		<div id="menucontenido" class="row-fluid">
 			<div id="menulateral" class="span2 ">
-				<p>menu lateral</p>
+				<p>Categoria Muebles</p>
 				<ul>
 					<li>elemento1</li>
 					<li>elemento1</li>
@@ -52,7 +73,16 @@
 		</div>
 		<!--footer  -->
 		<div id="footer" class="row-fluid text-center">
-			<p>pie de pagina</p>
+			<div id="socialmedia">
+				<img src="@routes.Assets.at("images/socialmedia/facebook.png")" alt="facebook logo">
+				<img src="@routes.Assets.at("images/socialmedia/twitter.png")" alt="twitter logo">
+				<img src="@routes.Assets.at("images/socialmedia/youtube.png")" alt="youtube logo">
+			</div>
+			<address>
+				Blvd Venezuela No 2230 Ent 39 y 41 Av Sur
+				El Salvador, San Salvador
+				Telefax: (503) 25130404 
+			</address>
 		</div>
 	</div>
  

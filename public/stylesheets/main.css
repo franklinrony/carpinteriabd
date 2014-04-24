@@ -1,5 +1,6 @@
 body{
   background-color: #9E715C;
+  color:#3B3E37;
 }
 
 /*
@@ -12,22 +13,21 @@ body{
   height: 150px;
   padding-top: 20px;
   color: #5A4644;
+  font-family: 'Lato', 'sans-serif';
+  /*para que no salte el texto al navbar*/
+  white-space: nowrap;
+
 }
 #header img {
   float: left;
   box-shadow: #808080;
 }
-/*
-===css barra navegacion===
-*/
-#nav{
-  background-color: #947E73;
-}
+
 /*
 ===css menu lateral===
 */
 #menulateral{
-  background-color: #FAE19E;
+  background-color: #F1F1F1;
   height: 25%;
 
 }
@@ -37,7 +37,9 @@ body{
 */
 
 #contenido{
-   background-color:  #CDAC79;
+   background-color:  #FFFFFF;
+   padding: 15px 15px;
+   box-shadow: #808080
 
 }
 /*
@@ -54,14 +56,25 @@ body{
 ===css pie de pagina===
 */
 #footer{
-  background-color: #BC8554;
+  background-color: #FFE2A9;
   height: 30px;
   padding-top: 2%;
   padding-bottom: 2%;
   /*subir wrapper*/
-  margin-bottom: 1%
+  margin-bottom: 1%;
+  white-space: nowrap;
 
 }
+/*
+===iconos redes sociales===
+*/
+#socialmedia{
+  float: right;
+  padding-right: 24px;
+  box-shadow: #808080
+
+}
+
 /*remover espacio entre menu lateral y area contenido */
 .nopadding {
    padding: 0 !important;
