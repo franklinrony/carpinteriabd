@@ -4,9 +4,14 @@
 
 # Home page
 GET     /                           controllers.Application.index()
+
 #Registrar nuevo usuario
 GET		/registro					controllers.Application.mostrarFormulario()
 POST	/registrarusuario   		controllers.Application.registrarUsuario()
+
+#Inicio de Sesion de usuario
+GET		/login						controllers.Application.mostrarLogin()
+POST	/login						controllers.Application.autenticarUsuario()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table usuario (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   nombres                   varchar(255),
   apellidos                 varchar(255),
   edad                      integer,
@@ -14,18 +14,14 @@ create table usuario (
   constraint pk_usuario primary key (id))
 ;
 
-create sequence usuario_seq;
-
 
 
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists usuario;
+drop table usuario;
 
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists usuario_seq;
+SET FOREIGN_KEY_CHECKS=1;
 

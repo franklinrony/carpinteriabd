@@ -38,11 +38,23 @@ public class Usuario extends Model{
 		usuario.save();
 	}
 	
+	// verificar datos de login
+	public static Usuario autenticarUsuario(String username, String password) {
+       Usuario user = Usuario.find.where().eq("username", username).findUnique();
+		if (user != null && BCrypt.checkpw(password, user.password)) {
+			return user;
+		} 
+		else {
+			return null;
+		}
+    }
+	
 	//verificar si ya existe un username en la base de datos
 	public static Usuario verificarUsername(String username) {
         return find.where()
             .eq("username", username).findUnique();
     }
+	
 	//verificar si ya existe un correo en la base de datos
 	public static Usuario verificarCorreo(String correo) {
         return find.where()

@@ -1,0 +1,21 @@
+@(formulario:Form[Login])
+@import helper._
+@import helper.twitterBootstrap._
+@template("Iniciar sesion") {
+
+		@form(routes.Application.autenticarUsuario()){
+			<h1>Inicio de sesion</h1>
+	            
+			@inputText(formulario("username"),'_label->"Nombe Usuario")
+			@inputPassword(formulario("password"),'_label->"Contraseña",'_help -> "Debe tener minimo 6 caracteres. ")
+			<button type="submit" class="btn btn-primary">Ingresar</button>
+			@*mensaje error login fallido *@		
+			@if(formulario.hasGlobalErrors) { 
+                <p style="color:red">
+                    @formulario.globalError.message
+                </p>
+            }
+
+		}
+
+}

@@ -9,6 +9,8 @@ import views.html.registro.*;
 public class Application extends Controller {
 	//crear formulario para enviar como parametro
 	static Form<Usuario> usuarioForm = Form.form(Usuario.class);
+	//formulario login
+	static Form<Login> loginForm=Form.form(Login.class);
 	
     public static Result index() {
         return ok(index.render("Hola mundo"));
@@ -18,6 +20,7 @@ public class Application extends Controller {
 	public static Result mostrarFormulario(){
 		return ok(nuevousuario.render(usuarioForm));
 	}
+	
 	//Registrar usuario en la bd
 	public static Result registrarUsuario(){
 	//asignando los campos llenos a los Campos del form
@@ -45,5 +48,23 @@ public class Application extends Controller {
 		Usuario.create(filledForm.get());
 		return redirect(routes.Application.index());  
 	}
-}
+	}
+	
+	//mostrar  pagina login
+	public static Result mostrarLogin(){
+		return ok(login.render(loginForm));
+	}
+	//metodo verificar datos de usuaio
+	public static Result autenticarUsuario(){
+		Form<Login> filledLogin = loginForm.bindFromRequest();
+        if(filledLogin.hasErrors()) {
+            return badRequest(login.render(filledLogin));
+        } else {
+			//manejo sesion 
+			//session("username",loginForm.get().username);
+            return redirect(
+                routes.Application.index()
+            );
+        }
+	}
 }
