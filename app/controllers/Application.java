@@ -6,6 +6,7 @@ import play.data.*;
 import models.*;
 import views.html.*;
 import views.html.registro.*;
+import play.mvc.Http.*;
 public class Application extends Controller {
 	//crear formulario para enviar como parametro
 	static Form<Usuario> usuarioForm = Form.form(Usuario.class);
@@ -61,7 +62,7 @@ public class Application extends Controller {
             return badRequest(login.render(filledLogin));
         } else {
 			//manejo sesion 
-			//session("username",loginForm.get().username);
+			session("username",filledLogin.get().username.toString());
             return redirect(
                 routes.Application.index()
             );
