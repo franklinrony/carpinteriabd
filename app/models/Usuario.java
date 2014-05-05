@@ -14,20 +14,23 @@ public class Usuario extends Model{
 	//Campos
 	@Id
 	public long id;
-	@Required
+	@Required (message="Debe ingresar sus Nombres")
 	public String nombres;
-	@Required
+	@Required (message="Debe ingresar sus Apellidos")
 	public String apellidos;
 	@Min(value=1)
 	public int edad;
-	@Required
+	@Required (message="Debe ingresar un correo electronico valido")
 	@Email 
 	public String correo;
-	@Required
+	@Required (message="Debe ingresar un usuario")
 	public String username;
-	@Required
+	@Required (message="Debe ingresar una contraseña")
 	public String password;
-
+	//grupo por defecto 1 usuarios
+	@Column(columnDefinition = "integer default 1")
+	public int grupo=1;
+	
 	// -- Queries
     public static Model.Finder<String,Usuario> find = new Model.Finder<String,Usuario>(String.class, Usuario.class);
 	

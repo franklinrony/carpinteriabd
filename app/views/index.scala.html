@@ -1,7 +1,8 @@
 @(message: String)
-
 @template("Pagina de Inicio-Muebleria Navarro") {
-
+	@*Mensaje cuando se cierre sesion*@
+	@if(flash.contains("success")) {
+		<span class="label label-success">@flash.get("success")</span><br />
+        }
     @message
-
 }

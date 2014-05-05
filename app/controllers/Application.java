@@ -6,7 +6,7 @@ import play.data.*;
 import models.*;
 import views.html.*;
 import views.html.registro.*;
-import play.mvc.Http.*;
+//import play.mvc.Http.*;
 public class Application extends Controller {
 	//crear formulario para enviar como parametro
 	static Form<Usuario> usuarioForm = Form.form(Usuario.class);
@@ -47,7 +47,8 @@ public class Application extends Controller {
 	//guardar usuario en la bd
 	else {
 		Usuario.create(filledForm.get());
-		return redirect(routes.Application.index());  
+		flash("success", "Usuario creado correctamente,ahora puede iniciar sesion");
+		return redirect(routes.Application.mostrarLogin());  
 	}
 	}
 	
@@ -57,15 +58,26 @@ public class Application extends Controller {
 	}
 	//metodo verificar datos de usuaio
 	public static Result autenticarUsuario(){
+	
 		Form<Login> filledLogin = loginForm.bindFromRequest();
         if(filledLogin.hasErrors()) {
             return badRequest(login.render(filledLogin));
         } else {
 			//manejo sesion 
 			session("username",filledLogin.get().username.toString());
+			flash("success", "Ha iniciado sesion correctamente");
             return redirect(
                 routes.Application.index()
             );
         }
 	}
+	//cerrar sesion
+    public static Result cerrarSesion() {
+		//borrar sesion
+        session().clear();
+        flash("success", "Ha cerrado sesion correctamente");
+        return redirect(
+            routes.Application.index()
+        );
+    }
 }

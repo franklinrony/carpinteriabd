@@ -2,21 +2,27 @@
 @import helper._
 @import helper.twitterBootstrap._
 @template("Registro de Nuevo Cliente") {
-	<h1>Registro usuario</h1>
-	<span class="label label-info">Por favor rellene todos los campos del siguiente formulario</span>
-	<br />
-	<br />
-	@form(routes.Application.registrarUsuario()){
-		@inputText(formulario("nombres"),'_label -> "Nombres")
-		@inputText(formulario("apellidos"),'_label->"Apellidos")
-		@inputText(formulario("edad"),'_label->"Edad")
-		@inputText(formulario("correo"),'_label->"Correo electronico")
-		@inputText(formulario("username"),'_label->"Nombe Usuario")
-		@inputPassword(formulario("password"),'_label->"Contraseña",'_help -> "Debe tener minimo 6 caracteres. ")
-		@inputPassword(formulario("repassword"),'_label->"Repita su Contraseña")
-		<input type="submit" value="Crear" class="btn btn-primary" />
-		
-	}
-    
 
+	@*Ocultamiento de informacion para usuarios logueados*@
+	@if(session.get("username") != null) {
+		<span class="label label-important">Ud ya Inicio sesion en el sistema</span><br />
+	}
+	@*Mostrar formulario si no esta logueado*@
+	@if(session.get("username") == null){
+		<h1>Registro usuario</h1>
+		<span class="label label-info">Por favor rellene todos los campos del siguiente formulario</span>
+		<br />
+		<br />
+		@form(routes.Application.registrarUsuario()){
+			@inputText(formulario("nombres"),'_label -> "Nombres")
+			@inputText(formulario("apellidos"),'_label->"Apellidos")
+			@inputText(formulario("edad"),'_label->"Edad")
+			@inputText(formulario("correo"),'_label->"Correo electronico")
+			@inputText(formulario("username"),'_label->"Nombe Usuario")
+			@inputPassword(formulario("password"),'_label->"Contraseña",'_help -> "Debe tener minimo 6 caracteres. ")
+			@inputPassword(formulario("repassword"),'_label->"Repita su Contraseña")
+			<input type="submit" value="Crear" class="btn btn-primary" />
+			
+		}
+    }
 }

@@ -2,20 +2,28 @@
 @import helper._
 @import helper.twitterBootstrap._
 @template("Iniciar sesion") {
-
+		
+		@*Ocultamiento de informacion para usuarios logueados*@
+		@if(session.get("username") != null) {
+				<span class="label label-important">Ud ya Inicio sesion en el sistema</span><br />
+		}
+		@*Mostrar formulario si no esta logueado*@
+		@if(session.get("username") == null){
 		@form(routes.Application.autenticarUsuario()){
-			<h1>Inicio de sesion</h1>
-	            
-			@inputText(formulario("username"),'_label->"Nombe Usuario")
-			@inputPassword(formulario("password"),'_label->"Contraseña",'_help -> "Debe tener minimo 6 caracteres. ")
-			<button type="submit" class="btn btn-primary">Ingresar</button>
-			@*mensaje error login fallido *@		
-			@if(formulario.hasGlobalErrors) { 
-                <p style="color:red">
-                    @formulario.globalError.message
-                </p>
-            }
-
+				<h1>Inicio de sesion</h1>
+				@if(flash.contains("success")) {
+					<span class="label label-success">@flash.get("success")</span><br />
+				}   
+				@inputText(formulario("username"),'_label->"Nombe Usuario")
+				@inputPassword(formulario("password"),'_label->"Contraseña",'_help -> "Debe tener minimo 6 caracteres. ")
+				<button type="submit" class="btn btn-primary">Ingresar</button>
+				@*mensaje error login fallido *@		
+				@if(formulario.hasGlobalErrors) { 
+					<p style="color:red">
+						@formulario.globalError.message
+					</p>
+				}
+			}
 		}
 
 }

@@ -19,20 +19,30 @@
 	<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
-					<a class="brand" href="@routes.Application.index">Muebleria Navarro</a>
+					@if(session.get("username") == null) {
+					<a class="brand" href="@routes.Application.index">Muebleria Navarro</a>}
+					@*mostrar panel usuario*@
+					@if(session.get("username") != null) {
+						<a class="brand" href="@routes.Application.index">Bienvenido @session.get("username")</a>}
 					
 					<ul class="nav">
+						@*Ocultamiento de informacion para usuarios logueados*@
+						@if(session.get("username") == null) {
 						<li class="divider-vertical"></li>
 						<li class="active"><a href="@routes.Application.mostrarFormulario">Registro</a></li>
 						<li class="divider-vertical"></li>
 						<li><a href="@routes.Application.mostrarLogin"">Ingresar</a></li>
-						<li class="divider-vertical"></li>
+						<li class="divider-vertical"></li>}
 						<li><a href="">Solicitar Cotizacion</a></li>
 						<li class="divider-vertical"></li>
 						<li><a href="">Contactenos</a></li>
 						<li class="divider-vertical"></li>
 						<li><a href="">Panel Admin</a></li>
+						@*Mostrar Boton salir si esta logueado*@
+						@if(session.get("username") != null) {
 						<li class="divider-vertical"></li>
+						<li><a href="@routes.Application.cerrarSesion">Salir</a></li>
+						<li class="divider-vertical"></li>}
 					</ul>
 				</div>	
 			</div>
