@@ -27,7 +27,9 @@ public class Usuario extends Model{
 	public String username;
 	@Required (message="Debe ingresar una contraseña")
 	public String password;
-	//grupo por defecto 1 usuarios
+	//grupo por defecto cliente
+	//@ManyToOne
+	//public GrupoUsuario grupousuario;
 	@Column(columnDefinition = "integer default 1")
 	public int grupo=1;
 	

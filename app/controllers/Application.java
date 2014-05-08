@@ -63,8 +63,11 @@ public class Application extends Controller {
         if(filledLogin.hasErrors()) {
             return badRequest(login.render(filledLogin));
         } else {
+			//buscar  usuario para saber su grupo
+	       Usuario user = Usuario.find.where().eq("username", filledLogin.get().username).findUnique();
 			//manejo sesion 
 			session("username",filledLogin.get().username.toString());
+			session("grupo",Integer.toString(user.grupo));
 			flash("success", "Ha iniciado sesion correctamente");
             return redirect(
                 routes.Application.index()

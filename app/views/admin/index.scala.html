@@ -1,0 +1,18 @@
+
+@admintemplate("Panel Administrador-Muebleria Navarro") {
+	@*Mensaje cuando se cierre sesion*@
+	@if(session.get("username") != null && session.get("grupo") == "1") {
+		<p>Bienvenido al panel de administrador. <br>
+		Desde este panel podra realizar todas las actividades de mantenimiento y configuracion del sitio web
+		y ver informacion del servidor. <br>
+		En el lado derecho aparecen los menus para consultar el listado de usuarios, donde podra modifcar sus datps,
+		borrarlos o agregar un nuevo usuario. <br>
+		Tambien podra crear nuevos grupos de usuario, por defecto el sistema trae los siguientes grupos de usuario:
+		<em>Administrador,cliente,empleado</em> <br>
+		Tambien podra crearcategorias para productos y agregarlos. <br>
+		Ademas de ver las solicitudes de cotizacion de los clientes y consultar un listado de proveedores
+		</p>
+        } else{
+		<p>No tiene permisos de estar aqui</p>
+	}
+}

@@ -1,0 +1,40 @@
+@(lista: List[Usuario])
+
+@import helper._
+
+@admintemplate("Listado de Usuarios") {
+    
+<h2 class="text-center">Listado de Usuarios</h2>
+
+@if(flash.containsKey("success")) {
+	<h3 style="color: green">
+		<image src="@routes.Assets.at("images/ok.gif")">
+		@flash.get("success")
+	</h3>
+} 
+
+<table class="table table-hover table-bordered">
+	<tr>
+		<th>ID</th>
+		<th>Nombres</th>
+		<th>Apellidos</th>
+		<th>Edad</th>
+		<th>Correo</th>
+		<th>Username</th>
+		<th>Grupo</th>
+	</tr>
+
+	@for(registro <- lista) {
+	<tr>
+		<td>@registro.id</td>
+		<td>@registro.nombres</td>
+		<td>@registro.apellidos</td>
+		<td>@registro.edad</td>
+		<td>@registro.correo</td>
+		<td>@registro.username</td>
+		<td>@registro.grupo</td>
+	</tr>
+	}
+</table>
+
+}
