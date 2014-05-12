@@ -30,4 +30,5 @@ public class GrupoUsuario extends Model {
         return options;
     }
 
+
 }

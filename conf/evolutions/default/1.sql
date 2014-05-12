@@ -17,7 +17,7 @@ create table usuario (
   correo                    varchar(255),
   username                  varchar(255),
   password                  varchar(255),
-  grupo                     integer default 1,
+  grupo                     integer default 2,
   constraint pk_usuario primary key (id))
 ;
 

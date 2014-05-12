@@ -14,9 +14,9 @@
 		<br />
 		<br />
 		@form(routes.Application.registrarUsuario()){
-			@inputText(formulario("nombres"),'_label -> "Nombres")
+			@inputText(formulario("nombres"),'_label -> "Nombres",'_help -> "Ingrese su nombre completo. ")
 			@inputText(formulario("apellidos"),'_label->"Apellidos")
-			@inputText(formulario("edad"),'_label->"Edad")
+			@inputText(formulario("edad"),'_label->"Edad",'_showConstraints -> false)
 			@inputText(formulario("correo"),'_label->"Correo electronico")
 			@inputText(formulario("username"),'_label->"Nombe Usuario")
 			@inputPassword(formulario("password"),'_label->"Contraseña",'_help -> "Debe tener minimo 6 caracteres. ")

@@ -14,6 +14,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+    
+	
+            
+        
 	<div class="container-fluid">
 	<!-- Top navbar -->
 	<div class="navbar navbar-fixed-top">
@@ -48,7 +52,6 @@
 				</div>	
 			</div>
 		</div>
-		
 		<!-- Encabezado -->
 		<div id="header" class="row-fluid">
 			<div class="span12">
@@ -57,25 +60,26 @@
 			<h2 class="text-center">"Construyendo tus sueños en Madera"</h2>
 			</div>
 		</div>
-
 		<!-- contenido y menu lateral -->
 		<div id="menucontenido" class="row-fluid">
 			<div id="menulateral" class="span2 ">
 				<ul class="nav nav-list">
 				  <li class="nav-header">Usuarios</li>
 				  <li ><a href="@routes.Usuarios.listarUsuarios">Lista de usuarios</a></li>
-				  <li><a href="#">Tipos de usuario</a></li>
+				  <li class="nav-header">Grupos</li>
+				  <li><a href="">Lista de Grupos</a></li>
+			      <li><a href="@routes.Usuarios.nuevoGrupo">Agregar nuevo Grupo</a></li>
 				  <li class="nav-header">Producto</li>
 				  <li><a href="#">Categorias</a></li>
 				  <li><a href="#">Muebles</a></li>
 				  <li class="nav-header">Sistema</li>
-
 				</ul>
 			</div>
+                
 			<div id="contenido" class="span10 ">
 				@content 
 			</div>
-		</div>
+		</div>       
 		<!--footer  -->
 		<div id="footer" class="row-fluid text-center">
 			<div id="socialmedia">

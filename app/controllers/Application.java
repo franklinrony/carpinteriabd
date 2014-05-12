@@ -17,6 +17,12 @@ public class Application extends Controller {
         return ok(index.render("Hola mundo"));
     }
 	
+	//mostrar pagina de acceso denegado cuando
+	//el usuario no tiene permisos para ver una pagina
+	public static Result denegado(){
+		return forbidden(accesodenegado.render());
+	}
+	
 	//Mostrar formulario de registro
 	public static Result mostrarFormulario(){
 		return ok(nuevousuario.render(usuarioForm));
@@ -29,7 +35,7 @@ public class Application extends Controller {
 	// Check repeated password
 	if(!filledForm.field("password").valueOr("").isEmpty()) {
 		if(!filledForm.field("password").valueOr("").equals(filledForm.field("repassword").value())) {
-			filledForm.reject("repassword", "Password don't match");
+			filledForm.reject("repassword", "los passwords no coinciden");
 		}
 	}
 	//Verificar si el usuario no tiene una cuenta creada previamente

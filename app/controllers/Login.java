@@ -15,7 +15,7 @@ public  class Login extends Controller {
         
          public String validate() {
              if(Usuario.autenticarUsuario(username, password) == null) {
-                 return "Invalid user or password";
+                 return "Usuario o password incorrecto/s";
              }
              return null;
         }

@@ -1,0 +1,29 @@
+@(formulario: Form[GrupoUsuario])
+
+@import helper._
+@import helper.twitterBootstrap._
+@admintemplate("nuevo grupo de Usuario") {
+    
+<h2 class="text-center">Agregar nuevo grupo de usuarios</h2>
+
+@if(flash.containsKey("success")) {
+		<span class="alert alert-success"">@flash.get("success")</span>
+
+} 
+
+@if(flash.containsKey("error")) {
+
+		
+		<span class="alert alert-error">@flash.get("error")</span>
+		<br />
+	
+} 
+<br><br>
+@form(routes.Usuarios.save()) {
+	
+		@inputText(formulario("descripcion"),'_showConstraints -> false,        '_label -> "Descripcion del grupo       :")
+	
+    
+    <button type="submit" class="btn btn-primary">Crear</button>
+}
+}

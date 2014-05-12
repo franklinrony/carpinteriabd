@@ -30,8 +30,8 @@ public class Usuario extends Model{
 	//grupo por defecto cliente
 	//@ManyToOne
 	//public GrupoUsuario grupousuario;
-	@Column(columnDefinition = "integer default 1")
-	public int grupo=1;
+	@Column(columnDefinition = "integer default 2")
+	public int grupo=2;
 	
 	// -- Queries
     public static Model.Finder<String,Usuario> find = new Model.Finder<String,Usuario>(String.class, Usuario.class);
