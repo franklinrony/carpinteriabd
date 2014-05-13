@@ -1,4 +1,5 @@
 package models;
+import java.util.*;
 import play.db.ebean.*;
 import javax.persistence.*;
 //manejo de listas
@@ -13,7 +14,7 @@ import org.mindrot.jbcrypt.BCrypt;
 public class Usuario extends Model{
 	//Campos
 	@Id
-	public long id;
+	public Long id;
 	@Required (message="Debe ingresar sus Nombres")
 	public String nombres;
 	@Required (message="Debe ingresar sus Apellidos")
@@ -34,7 +35,7 @@ public class Usuario extends Model{
 	public int grupo=2;
 	
 	// -- Queries
-    public static Model.Finder<String,Usuario> find = new Model.Finder<String,Usuario>(String.class, Usuario.class);
+    public static Model.Finder<Long,Usuario> find = new Model.Finder<Long,Usuario>(Long.class, Usuario.class);
 	
 	//crear nuevo usuario
 	public static void create(Usuario usuario) {

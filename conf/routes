@@ -41,6 +41,13 @@ POST    /editargrupo/:id        controllers.Usuarios.actualizar(id:Long)
 #borrar grupo
 POST	/borrargrupo/:id		controllers.Usuarios.borrarGrupo(id:Long)
 
+#Crear usuario admin
+GET		/admin/registrarusuario		controllers.Usuarios.crearUsuario()
+POST	/admin/registrarusuario		controllers.Usuarios.registrarUsuario()
+
+#Borrar usuario
+POST	/borrarusuario/:id			controllers.Usuarios.borrarUsuario(id:Long)
+
 #Solicitar cotizacion
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

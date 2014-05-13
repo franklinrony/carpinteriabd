@@ -1,0 +1,33 @@
+@(formulario: Form[Usuario])
+
+@import helper._
+@import helper.twitterBootstrap._
+@admintemplate("Agregar nuevo Usuario") {
+    
+<h2 class="text-center">Agregar nuevo usuario</h2>
+
+@if(flash.containsKey("success")) {
+		<span class="alert alert-success">@flash.get("success")</span>
+
+} 
+
+@if(flash.containsKey("error")) {
+
+		
+		<span class="alert alert-error">@flash.get("error")</span>
+		<br />
+	
+} 
+<br><br>
+@form(routes.Usuarios.registrarUsuario()) {
+		@inputText(formulario("nombres"),'_showConstraints -> false,'_label -> "Nombres:")
+		@inputText(formulario("apellidos"),'_showConstraints -> false,'_label -> "Apellidos:")
+		@inputText(formulario("edad"),'_showConstraints -> false,'_label -> "Edad:")
+		@inputText(formulario("correo"),'_showConstraints -> false,'_label -> "Correo electronico:")
+		@inputText(formulario("username"),'_showConstraints -> false,'_label -> "Usuario:")
+		@inputPassword(formulario("password"),'_label->"Password",'_help -> "Debe tener minimo 6 caracteres. ")
+		@inputPassword(formulario("repassword"),'_label->"Repita su Password")
+
+		<button type="submit" class="btn btn-primary">Crear</button>
+}
+}

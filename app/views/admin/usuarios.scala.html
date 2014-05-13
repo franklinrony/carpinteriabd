@@ -7,10 +7,8 @@
 <h2 class="text-center">Listado de Usuarios</h2>
 
 @if(flash.containsKey("success")) {
-	<h3 style="color: green">
-		<image src="@routes.Assets.at("images/ok.gif")">
-		@flash.get("success")
-	</h3>
+		<span class="alert alert-success"">@flash.get("success")</span>
+		<br><br>
 } 
 
 <table class="table table-hover table-bordered">
@@ -22,6 +20,8 @@
 		<th>Correo</th>
 		<th>Username</th>
 		<th>Grupo</th>
+		<th>Editar</th>
+		<th>Borrar</th>
 	</tr>
 
 	@for(registro <- lista) {
@@ -33,6 +33,8 @@
 		<td>@registro.correo</td>
 		<td>@registro.username</td>
 		<td>@registro.grupo</td>
+		<td><a href="@routes.Usuarios.editar(registro.id)"><img src="@routes.Assets.at("images/edit.png")" alt="editar Usuario" title="Editar Usuario"></a></td>
+		<td>@form(routes.Usuarios.borrarUsuario(registro.id)){<button type="image" style="border:0; background-color:transparent;"><img src="@routes.Assets.at("images/del.png")" alt="borrar Usuario" title="Borrar Usuario"></button>}</td>
 	</tr>
 	}
 </table>
