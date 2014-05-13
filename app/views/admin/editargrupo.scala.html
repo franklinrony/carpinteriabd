@@ -1,10 +1,9 @@
-@(formulario: Form[GrupoUsuario])
-
+@(id: Long, formulario: Form[GrupoUsuario])
 @import helper._
 @import helper.twitterBootstrap._
-@admintemplate("nuevo grupo de Usuario") {
+@admintemplate("Editar grupo de Usuario") {
     
-<h2 class="text-center">Agregar nuevo grupo de usuarios</h2>
+<h2 class="text-center">Editar grupo de usuarios</h2>
 
 @if(flash.containsKey("success")) {
 		<span class="alert alert-success">@flash.get("success")</span>
@@ -16,14 +15,14 @@
 		
 		<span class="alert alert-error">@flash.get("error")</span>
 		<br />
-	
 } 
 <br><br>
-@form(routes.Usuarios.save()) {
+@form(routes.Usuarios.actualizar(id)) {
+		@inputText(formulario("id"), 'readonly -> "readonly",'_label -> "ID:") 
 		@inputText(formulario("nombre"),'_showConstraints -> false,'_label -> "Nombre del grupo:")
 		@inputText(formulario("descripcion"),'_showConstraints -> false,'_label -> "Descripcion del grupo:")
 	
     
-    <button type="submit" class="btn btn-primary">Crear</button>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
 }
 }

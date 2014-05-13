@@ -14,8 +14,9 @@ public class GrupoUsuario extends Model {
 
     @Id
     public Long id;
-
     @Constraints.Required(message="Debe ingresar el nombre del grupo")
+    public String nombre;
+    @Constraints.Required(message="Debe ingresar una descripcion del grupo")
     public String descripcion;
 
 	// Generic query helper for entity with id Long

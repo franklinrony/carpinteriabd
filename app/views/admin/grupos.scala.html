@@ -1,0 +1,35 @@
+@(lista: List[GrupoUsuario])
+
+@import helper._
+
+@admintemplate("Grupos de Usuarios") {
+    
+<h2 class="text-center">Listado de Grupos</h2>
+@if(flash.containsKey("success")) {
+		<span class="alert alert-success"">@flash.get("success")</span>
+		<br><br>
+} 
+
+<table class="table table-hover table-bordered">
+	<tr>
+		<th>ID Grupo</th>
+		<th>Nombre</th>
+		<th>Descripcion</th>
+		<th>Modificar</th>
+		<th>Borrar</th>
+
+	</tr>
+
+	@for(registro <- lista) {
+	<tr>
+		<td>@registro.id</td>
+		<td>@registro.nombre</td>
+		<td>@registro.descripcion</td>
+		<td><a href="@routes.Usuarios.editar(registro.id)"><img src="@routes.Assets.at("images/edit.png")" alt="editar Grupo" title="Editar Grupo"></a></td>
+		<td>@form(routes.Usuarios.borrarGrupo(registro.id)){<button type="image" style="border:0; background-color:transparent;"><img src="@routes.Assets.at("images/del.png")" alt="borrar Grupo" title="Borrar Grupo"></button>}</td>
+
+	</tr>
+	}
+</table>
+
+}

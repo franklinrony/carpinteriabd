@@ -29,6 +29,31 @@ public class Usuarios extends Controller {
 			flash("success", "Grupo Agregado Correctamente");
 			return ok(nuevogrupo.render(formulario));  
 	}
-
+	}
+	//ver listado de grupos
+	public static Result listadoGrupos(){
+		return ok(grupos.render(GrupoUsuario.find.all()));
+	}
+	// GET, editar el registro
+    public static Result editar(Long id) {
+        Form<GrupoUsuario> formulario = Form.form(GrupoUsuario.class).fill(GrupoUsuario.find.byId(id));
+        return ok(editargrupo.render(id, formulario));
+    }
+	//guardar registro editador
+	public static Result actualizar(Long id){
+		Form<GrupoUsuario> formulario = Form.form(GrupoUsuario.class).bindFromRequest();
+        if(formulario.hasErrors()) {
+			flash("error","Error con el ingreso de datos");
+            return badRequest(editargrupo.render(id, formulario));
+        }
+        formulario.get().update(id);
+        flash("success", "Grupo actualizado con exito!");
+        return ok(grupos.render(GrupoUsuario.find.all()));
+	}
+	//borrar grupo 
+	public static Result borrarGrupo(Long id){
+		GrupoUsuario.find.ref(id).delete();
+        flash("success", "Grupo ha sido eliminado");
+        return ok(grupos.render(GrupoUsuario.find.all()));
 	}
 }

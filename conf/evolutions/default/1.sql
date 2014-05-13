@@ -5,6 +5,7 @@
 
 create table grupo_usuario (
   id                        bigint auto_increment not null,
+  nombre                    varchar(255),
   descripcion               varchar(255),
   constraint pk_grupo_usuario primary key (id))
 ;
